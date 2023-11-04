@@ -62,7 +62,10 @@ jobs:
           path: ./dist
       - name: Output contents
         run: ls
+      - name: Output
+        run: echo "Deploying..."
       - name: Deploy site
+
         uses: ./.github/actions/deploy-s3-javascript
         #here we add secret values to our enviornment of
         #the github runner, AWS-CLI looks for keys with
@@ -75,8 +78,6 @@ jobs:
           bucket: gha-custom-action-hosting-151
           dist-folder: ./dist
           #bucket-region: us-east-2
-
-
 
   information:
     runs-on: ubuntu-latest
