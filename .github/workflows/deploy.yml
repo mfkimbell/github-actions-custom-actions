@@ -62,8 +62,6 @@ jobs:
           path: ./dist
       - name: Output contents
         run: ls
-      - name: Output
-        run: echo "Deploying..."
       - name: Deploy site
 
         uses: ./.github/actions/deploy-s3-javascript
@@ -79,17 +77,4 @@ jobs:
           dist-folder: ./dist
           #bucket-region: us-east-2
 
-  information:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get code
-        uses: actions/checkout@v3
-      - name: Get build artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: dist-files
-          path: ./dist
-      - name: Output contents
-        run: ls
-      - name: Run custom action
-        uses: ./.github/actions/deploy-s3-javascript
+ 
