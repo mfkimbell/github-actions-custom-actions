@@ -84,5 +84,12 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
+      - name: Get build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: dist-files
+          path: ./dist
+      - name: Output contents
+        run: ls
       - name: Run custom action
         uses: ./.github/actions/deploy-s3-javascript
