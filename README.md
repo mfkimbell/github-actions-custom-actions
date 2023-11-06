@@ -77,6 +77,33 @@ and that results in our URL being added to our actions logs:
 <img width="851" alt="Screenshot 2023-11-06 at 11 13 25 AM" src="https://github.com/mfkimbell/github-actions-custom-actions/assets/107063397/451546f2-97c4-451b-8025-06af93f427ad">
 
 
+### Custom Javascript Action:
+Key difference is that we are going to use a docker image based on a Dockerfile. This is so we can execute in a language of our choice. I chose Python. 
+
+<img width="558" alt="Screenshot 2023-11-06 at 12 15 43 PM" src="https://github.com/mfkimbell/github-actions-custom-actions/assets/107063397/7f402900-93dc-47f0-b776-b170dc39994c">
+
+All our docker file does is copy the requirements.txt and deployment.py, install the dependencies, then call the python function, which performs the exact same as main.js but in Python.
+
+<img width="449" alt="Screenshot 2023-11-06 at 12 16 44 PM" src="https://github.com/mfkimbell/github-actions-custom-actions/assets/107063397/bc3503dc-1a77-4a04-8e65-dc094f411d37">
+
+And here's the python file:
+
+<img width="813" alt="Screenshot 2023-11-06 at 12 18 20 PM" src="https://github.com/mfkimbell/github-actions-custom-actions/assets/107063397/416ad168-34f3-44e3-a0dd-4feebe16df19">
+
+We change the deploy step to use our new docker action:
+
+<img width="533" alt="Screenshot 2023-11-06 at 12 15 00 PM" src="https://github.com/mfkimbell/github-actions-custom-actions/assets/107063397/9eeb7b0a-4fad-4ae2-b747-f46400791b10">
+
+Finally, we can see the results of our change, we can see our job is now running on a Docker image.
+
+<img width="536" alt="Screenshot 2023-11-06 at 12 20 21 PM" src="https://github.com/mfkimbell/github-actions-custom-actions/assets/107063397/1d8d99bc-1d18-48bc-b9b9-10c361e53ee5">
+
+And we get the same result as before:
+
+<img width="537" alt="Screenshot 2023-11-06 at 12 10 36 PM" src="https://github.com/mfkimbell/github-actions-custom-actions/assets/107063397/d0a3aaf1-f1dd-4ede-8967-8fe0c5d44a2e">
+
+
+
 
 
 
