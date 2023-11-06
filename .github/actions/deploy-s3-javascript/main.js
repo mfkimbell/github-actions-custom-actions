@@ -21,7 +21,8 @@ function run() {
  	// specific names when making calls, ex: AWS_SECRET_KEY 
   exec.exec(`aws s3 sync ${distFolder} ${s3Uri} --region ${bucketRegion}`);
 
-  core.notice("Hello from my custom Javascript Action!");
+  const websiteUrl = `http://${bucket}.s3-website-${bucketRegion}.amazonaws.com`
+  core.setOutput('website-url',websiteUrl) // ::set
 }
 
 run();

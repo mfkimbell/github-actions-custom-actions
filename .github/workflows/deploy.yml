@@ -63,7 +63,7 @@ jobs:
       - name: Output contents
         run: ls
       - name: Deploy site
-
+        id: deploy
         uses: ./.github/actions/deploy-s3-javascript
         #here we add secret values to our enviornment of
         #the github runner, AWS-CLI looks for keys with
@@ -76,5 +76,6 @@ jobs:
           bucket: gha-custom-action-hosting-151
           dist-folder: ./dist
           #bucket-region: us-east-2
-
- 
+      - name: Output information
+        run: |
+          echo "Live URL: ${{ steps.deploy.outputs.website-url}}"
