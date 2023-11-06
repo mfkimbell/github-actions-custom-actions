@@ -64,7 +64,8 @@ jobs:
         run: ls
       - name: Deploy site
         id: deploy
-        uses: ./.github/actions/deploy-s3-javascript
+        # uses: ./.github/actions/deploy-s3-javascript #if i wanted Javscript action
+        uses: ./.github/actions/deploy-s3-docker
         #here we add secret values to our enviornment of
         #the github runner, AWS-CLI looks for keys with
         #these names when making calls
