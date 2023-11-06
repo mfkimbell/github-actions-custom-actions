@@ -60,3 +60,24 @@ For our website deployment, I use a javascript custom action. I define input par
 
 <img width="699" alt="Screenshot 2023-11-04 at 5 35 42 PM" src="https://github.com/mfkimbell/github-actions-custom-actions/assets/107063397/c61b5f48-2b46-49b1-b17c-9e9c2c86a4d6">
 
+We add an "output" to action.yml
+```
+outputs:
+  website-url:
+    description: 'The URL of the deployed website.'
+```
+and then set that output in "main.js"
+
+```
+ const websiteUrl = `http://${bucket}.s3-website-${bucketRegion}.amazonaws.com`
+  core.setOutput('website-url',websiteUrl) // ::set
+```
+and that results in our URL being added to our actions logs:
+
+<img width="851" alt="Screenshot 2023-11-06 at 11 13 25 AM" src="https://github.com/mfkimbell/github-actions-custom-actions/assets/107063397/451546f2-97c4-451b-8025-06af93f427ad">
+
+
+
+
+
+
