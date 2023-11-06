@@ -9,6 +9,8 @@
 
 <img width="847" alt="Screenshot 2023-11-03 at 12 51 46 PM" src="https://github.com/mfkimbell/github-actions-custom-actions/assets/107063397/2651e96f-7302-441b-8a24-d3f8ea93be42">
 
+### Custom Composite Action
+
 The first action I assigned is a composite action. This composite action checks whether caching needs to be performed, then uses a Github custom action to download, install, and then cache dependencies with "actions/cache@v3". The install step is only run if we fail our cache-hit or we specify with an input to specifically not use cache:  
 
 ```if: steps.cache.outputs.cache-hit != 'true' || inputs.caching != 'true'```
@@ -47,6 +49,8 @@ This is where this custom action is used in the main workflow:
 Next we run a test step. It gathers the required files and then uses a built in npm testing library to run a test.jsx file that tests for the presence of a button as well as the popup component of the button. 
 
 <img width="579" alt="Screenshot 2023-11-04 at 5 26 59 PM" src="https://github.com/mfkimbell/github-actions-custom-actions/assets/107063397/1d1e24c3-7281-4a51-8057-89dfe98112b0">
+
+### Custom Javascript Action
 
 For our website deployment, I use a javascript custom action. I define input parameters, with "bucket" and "dist-folder" being required, and "bucket-region" defaulting to 'us-east-1', which are passed in from the "deploy.yml" if they are set as "required: true". These will be used during the execution of the "main.js" file. 
 
