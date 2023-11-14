@@ -2,8 +2,9 @@
 
 ### **Tools Used:**
 * `Composite Actions` For simple combinations of different jobs, with inputs and outputs for dynamic responses
-* `Javascript Actions` 
-* `Docker Actions`
+* `Javascript Actions` For custom actions that run scripts in combination with a .js file
+* `Docker Actions` For cutom actions that need scripts run in a non-javascript language and for more control over enviornment
+* `AWS-S3` For static website hosting
 
     
 
