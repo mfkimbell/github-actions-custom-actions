@@ -1,5 +1,7 @@
 # github-actions-custom-actions
 
+![visual](https://github.com/mfkimbell/github-actions-custom-actions/assets/107063397/d96c5b80-acaf-4678-8858-7e3e89e4a64c)
+
 ### **Tools Used:**
 * `Composite Actions` For simple combinations of different jobs, with inputs and outputs for dynamic responses
 * `Javascript Actions` For custom actions that run scripts in combination with a .js file
