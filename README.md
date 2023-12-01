@@ -1,6 +1,8 @@
 # github-actions-custom-actions
 
-![visual](https://github.com/mfkimbell/github-actions-custom-actions/assets/107063397/d96c5b80-acaf-4678-8858-7e3e89e4a64c)
+<img width="1000" alt="visual" src="https://github.com/mfkimbell/github-actions-custom-actions/assets/107063397/3670e3ee-d7d3-4af1-9925-6f5bbfa41714">
+
+
 
 ### **Tools Used:**
 * `Composite Actions` For simple combinations of different jobs, with inputs and outputs for dynamic responses
